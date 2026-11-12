@@ -80,10 +80,8 @@ public class MainVerticle extends AbstractVerticle {
   highscoreController.registerRoutes(router);        // NEW
 
   router.get("/").handler(ctx ->
-    ctx.response()
-      .setStatusCode(302)
-      .putHeader("Location", "/index.html")
-      .end()
+    ctx.redirect("/pages/login.html")
+      
   );
   
   
