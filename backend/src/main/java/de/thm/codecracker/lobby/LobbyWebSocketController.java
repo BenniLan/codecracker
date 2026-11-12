@@ -110,6 +110,7 @@ public class LobbyWebSocketController {
 
     if(invited.isEmpty()){
       sendError(initiatorSocket, "Es sind keine anderen Spieler in der Lobby");
+      return ;
     }
 
     for(var socket : invited){
@@ -144,7 +145,7 @@ public class LobbyWebSocketController {
     boolean allResponded = activeInvite.responses().size() == activeInvite.invited().size();
     boolean enoughReady = countReadySockets() >= MIN_READY_PLAYER;
 
-    if (allResponded || enoughReady) {
+    if (allResponded) {
     vertx.cancelTimer(activeInvite.timerId());
     resolveInvite();
     }
@@ -173,7 +174,7 @@ public class LobbyWebSocketController {
       JsonArray readyUsernames = new JsonArray(
       readySockets.stream().map(s -> players.get(s).username()).toList()
       );
-
+      readySockets.removeIf(s -> !players.containsKey(s));
       playingUsernames = readySockets.stream()
       .map(s -> players.get(s).username())
       .collect(Collectors.toSet());
@@ -187,29 +188,53 @@ public class LobbyWebSocketController {
         for(var socket : readySockets){
           socket.writeTextMessage(startedMessage.encode());
         }
+       JsonObject closedMessage = new JsonObject().put("type", "invite-closed");
+     for (var socket : activeInvite.invited()) {
+          if (!readySockets.contains(socket) && !socket.isClosed()) {
+            socket.writeTextMessage(closedMessage.encode());
+            }
+}
     } else {
       JsonObject cancelledMessage = new JsonObject().put("type", "game-cancelled");
       activeInvite.initiator().writeTextMessage(cancelledMessage.encode());
       for (var socket : activeInvite.invited()) {
         socket.writeTextMessage(cancelledMessage.encode());
       }
+      if (!activeInvite.initiator().isClosed()) {
+          activeInvite.initiator().writeTextMessage(cancelledMessage.encode());
+          }
+  for (var socket : activeInvite.invited()) {
+    if (!socket.isClosed()) {
+       socket.writeTextMessage(cancelledMessage.encode());
+  }
+}
     }
     
       for (var socket : activeInvite.invited()) {
         players.computeIfPresent(socket, (s, player) -> player.withStatus(LobbyStatus.IDLE));
       }
-
+      
+        
       activeInvite = null;
       broadcastLobbyState();
     }
 
 
-    private void handleLeftPlayer(ServerWebSocket socket){
-      if(activeInvite != null && (activeInvite.initiator().equals(socket) || activeInvite.invited().contains(socket))){
-        vertx.cancelTimer(activeInvite.timerId());
-        resolveInvite();
-      }
+   private synchronized void handleLeftPlayer(ServerWebSocket socket) {
+  if (activeInvite == null) return;
+
+  if (activeInvite.invited().contains(socket)) {
+    activeInvite.responses().put(socket, false);
+    if (activeInvite.responses().size() == activeInvite.invited().size()) {
+      vertx.cancelTimer(activeInvite.timerId());
+      resolveInvite();
     }
+  } else if (activeInvite.initiator().equals(socket)) {
+    vertx.cancelTimer(activeInvite.timerId());
+    resolveInvite();
+  }
+}
+
 
     private void sendError(ServerWebSocket socket, String message){
       socket.writeTextMessage(new JsonObject()
