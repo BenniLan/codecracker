@@ -333,11 +333,15 @@ async function loadHighscore(): Promise<void> {
     }
 
     // Einträge sind bereits sortiert vom Server -> Platzierung ist einfach der Index + 1.
-    entries.forEach((entry, index) => {
-      const row = document.createElement("tr");
-      row.innerHTML = `<td>${index + 1}</td><td>${entry.username}</td><td>${entry.score}</td>`;
-      highScoreBody.appendChild(row);
-    })
+   entries.forEach((entry, index) => {
+  const row = document.createElement("tr");
+  for (const text of [String(index + 1), entry.username, String(entry.score)]) {
+    const cell = document.createElement("td");
+    cell.textContent = text;
+    row.appendChild(cell);
+  }
+  highScoreBody.appendChild(row);
+});
   } catch {
     highScoreBody.replaceChildren();
     const row = document.createElement("tr");
