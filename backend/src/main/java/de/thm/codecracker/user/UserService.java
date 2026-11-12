@@ -6,6 +6,7 @@ import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -47,16 +48,19 @@ public class UserService {
 
 
 
-  private void validateUsername(String username){
-    if (username == null || username.isBlank()) {
-      throw new IllegalArgumentException("Username must not be empty");
-    }
-    if (username.length() > MAX_TEXT_LENGTH) {
+ private static final Pattern USERNAMEPATTERN = Pattern.compile("^[A-Za-z0-9-]{3,20}$");
+
+private static void validateUsername(String username) {
+  if (username == null || !USERNAMEPATTERN.matcher(username).matches()) {
+    throw new IllegalArgumentException(
+      "Benutzername muss 3–20 Zeichen lang sein und darf nur Buchstaben, Zahlen,  und - enthalten");
+  }
+  if (username.length() > MAX_TEXT_LENGTH) {
       throw new IllegalArgumentException(
         "Username must not exceed 16 characters"
       );
     }
-  }
+}
 
   private void validatePassword(String rawPassword){
     if (rawPassword == null || rawPassword.length() <= 6) {
