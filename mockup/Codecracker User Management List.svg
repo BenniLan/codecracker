@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <style>
+    text { font-family: Arial, sans-serif; fill: #212529; }
+    .card { fill: #fff; stroke: #dee2e6; stroke-width: 2; }
+    .heading { font-size: 24px; font-weight: 700; }
+    .muted { fill: #6c757d; }
+    .button-text { fill: #fff; font-size: 15px; font-weight: 700; text-anchor: middle; }
+  </style>
+  <rect width="1200" height="760" fill="#f8f9fa"/>
+  <rect width="1200" height="76" fill="#212529"/>
+  <text x="42" y="48" fill="#fff" font-size="27" font-weight="700">Codecracker</text>
+  <text x="560" y="44" fill="#fff" font-size="16">Dashboard</text>
+  <text x="675" y="44" fill="#fff" font-size="16" font-weight="700">Benutzerverwaltung</text>
+  <text x="915" y="44" fill="#fff" font-size="16">Admin · Admin</text>
+  <text x="1090" y="44" fill="#fff" font-size="16">Abmelden</text>
+
+  <rect x="40" y="105" width="1120" height="570" rx="10" class="card"/>
+  <text x="70" y="153" class="heading">Benutzerverwaltung</text>
+  <text x="70" y="183" class="muted" font-size="15">Diese Ansicht und die zugehörigen Endpunkte sind ausschließlich für Administratoren verfügbar.</text>
+
+  <rect x="70" y="220" width="620" height="48" rx="6" fill="#fff" stroke="#adb5bd" stroke-width="2"/>
+  <text x="90" y="251" class="muted" font-size="15">Nach Benutzername suchen</text>
+  <rect x="710" y="220" width="130" height="48" rx="6" fill="#6c757d"/>
+  <text x="775" y="251" class="button-text">Suchen</text>
+  <rect x="915" y="220" width="205" height="48" rx="6" fill="#0d6efd"/>
+  <text x="1017" y="251" class="button-text">Benutzer hinzufügen</text>
+
+  <rect x="70" y="305" width="1050" height="55" fill="#e9ecef"/>
+  <text x="90" y="339" font-size="14" font-weight="700">Benutzername</text>
+  <text x="520" y="339" font-size="14" font-weight="700">Rolle</text>
+  <text x="900" y="339" font-size="14" font-weight="700">Aktionen</text>
+
+  <line x1="70" y1="415" x2="1120" y2="415" stroke="#dee2e6"/>
+  <text x="90" y="397" font-size="16">admin</text>
+  <text x="520" y="397" font-size="16">Admin</text>
+  <rect x="855" y="374" width="110" height="36" rx="5" fill="#6c757d"/>
+  <text x="910" y="398" class="button-text">Bearbeiten</text>
+  <rect x="980" y="374" width="110" height="36" rx="5" fill="#dc3545"/>
+  <text x="1035" y="398" class="button-text">Löschen</text>
+
+  <line x1="70" y1="480" x2="1120" y2="480" stroke="#dee2e6"/>
+  <text x="90" y="462" font-size="16">a.mustermann</text>
+  <text x="520" y="462" font-size="16">User</text>
+  <rect x="855" y="439" width="110" height="36" rx="5" fill="#6c757d"/>
+  <text x="910" y="463" class="button-text">Bearbeiten</text>
+  <rect x="980" y="439" width="110" height="36" rx="5" fill="#dc3545"/>
+  <text x="1035" y="463" class="button-text">Löschen</text>
+
+  <line x1="70" y1="545" x2="1120" y2="545" stroke="#dee2e6"/>
+  <text x="90" y="527" font-size="16">p.musterfrau</text>
+  <text x="520" y="527" font-size="16">User</text>
+  <rect x="855" y="504" width="110" height="36" rx="5" fill="#6c757d"/>
+  <text x="910" y="528" class="button-text">Bearbeiten</text>
+  <rect x="980" y="504" width="110" height="36" rx="5" fill="#dc3545"/>
+  <text x="1035" y="528" class="button-text">Löschen</text>
+</svg>

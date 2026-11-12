@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <style>
+    text { font-family: Arial, sans-serif; fill: #212529; }
+    .card { fill: #fff; stroke: #dee2e6; stroke-width: 2; }
+    .heading { font-size: 22px; font-weight: 700; }
+    .muted { fill: #6c757d; }
+    .button-text { fill: #fff; font-size: 16px; font-weight: 700; text-anchor: middle; }
+    .button-disabled { fill: #ced4da; stroke: #adb5bd; stroke-width: 1; }
+    .button-text-disabled { fill: #6c757d; font-size: 16px; font-weight: 700; text-anchor: middle; }
+  </style>
+  <rect width="1200" height="760" fill="#f8f9fa"/>
+  <rect width="1200" height="76" fill="#212529"/>
+  <text x="42" y="48" fill="#fff" font-size="27" font-weight="700">Codecracker</text>
+  <text x="875" y="44" fill="#fff" font-size="16">A. Mustermann · User</text>
+  <text x="1090" y="44" fill="#fff" font-size="16">Abmelden</text>
+
+  <rect x="40" y="105" width="740" height="570" rx="10" class="card"/>
+  <text x="70" y="150" class="heading">Runde 3 von 10</text>
+  <text x="545" y="150" fill="#dc3545" font-size="19" font-weight="700">Verbleibende Zeit: 17 s</text>
+
+  <text x="70" y="205" font-size="17" font-weight="700">1. Farbe auswählen</text>
+  <circle cx="100" cy="250" r="25" fill="#dc3545" stroke="#842029" stroke-width="3"/>
+  <circle cx="175" cy="250" r="25" fill="#0d6efd" stroke="#084298" stroke-width="3"/>
+  <circle cx="250" cy="250" r="25" fill="#198754" stroke="#0f5132" stroke-width="3"/>
+  <circle cx="325" cy="250" r="25" fill="#ffc107" stroke="#997404" stroke-width="3"/>
+  <text x="380" y="256" class="muted" font-size="15">Farben dürfen mehrfach verwendet werden.</text>
+
+  <text x="70" y="325" font-size="17" font-weight="700">2. Codeposition auswählen</text>
+  <circle cx="115" cy="385" r="34" fill="#dc3545" stroke="#842029" stroke-width="3"/>
+  <circle cx="220" cy="385" r="34" fill="#0d6efd" stroke="#084298" stroke-width="3"/>
+  <circle cx="325" cy="385" r="34" fill="#fff" stroke="#adb5bd" stroke-width="3" stroke-dasharray="6 5"/>
+  <circle cx="430" cy="385" r="34" fill="#fff" stroke="#adb5bd" stroke-width="3" stroke-dasharray="6 5"/>
+  <text x="115" y="445" class="muted" font-size="14" text-anchor="middle">Position 1</text>
+  <text x="220" y="445" class="muted" font-size="14" text-anchor="middle">Position 2</text>
+  <text x="325" y="445" class="muted" font-size="14" text-anchor="middle">Position 3</text>
+  <text x="430" y="445" class="muted" font-size="14" text-anchor="middle">Position 4</text>
+
+  <rect x="70" y="495" width="270" height="55" rx="6" class="button-disabled"/>
+  <text x="205" y="529" class="button-text-disabled">Code bestätigen</text>
+  <text x="365" y="518" class="muted" font-size="14">Erst aktiv, wenn alle vier</text>
+  <text x="365" y="540" class="muted" font-size="14">Positionen belegt sind.</text>
+  <text x="70" y="584" class="muted" font-size="14">Nach der Bestätigung ist der Code für diese Runde gesperrt.</text>
+
+  <rect x="70" y="612" width="270" height="43" rx="6" fill="#fff" stroke="#dc3545" stroke-width="2"/>
+  <text x="205" y="640" fill="#dc3545" font-size="15" font-weight="700" text-anchor="middle">Spiel abbrechen</text>
+
+  <rect x="810" y="105" width="350" height="570" rx="10" class="card"/>
+  <text x="840" y="150" class="heading">Codehistorie</text>
+  <text x="840" y="190" class="muted" font-size="14">Eigene Versuche mit kompaktem Feedback</text>
+
+  <rect x="840" y="215" width="285" height="92" rx="6" fill="#f8f9fa" stroke="#dee2e6"/>
+  <text x="855" y="243" font-size="15" font-weight="700">Runde 2</text>
+  <circle cx="860" cy="275" r="13" fill="#0d6efd"/>
+  <circle cx="897" cy="275" r="13" fill="#dc3545"/>
+  <circle cx="934" cy="275" r="13" fill="#ffc107"/>
+  <circle cx="971" cy="275" r="13" fill="#198754"/>
+  <circle cx="1030" cy="265" r="7" fill="#212529"/>
+  <text x="1043" y="270" font-size="14">2</text>
+  <circle cx="1030" cy="288" r="7" fill="#fff" stroke="#212529" stroke-width="2"/>
+  <text x="1043" y="293" font-size="14">1</text>
+
+  <rect x="840" y="325" width="285" height="92" rx="6" fill="#f8f9fa" stroke="#dee2e6"/>
+  <text x="855" y="353" font-size="15" font-weight="700">Runde 1</text>
+  <circle cx="860" cy="385" r="13" fill="#dc3545"/>
+  <circle cx="897" cy="385" r="13" fill="#198754"/>
+  <circle cx="934" cy="385" r="13" fill="#ffc107"/>
+  <circle cx="971" cy="385" r="13" fill="#0d6efd"/>
+  <circle cx="1030" cy="375" r="7" fill="#212529"/>
+  <text x="1043" y="380" font-size="14">1</text>
+  <circle cx="1030" cy="398" r="7" fill="#fff" stroke="#212529" stroke-width="2"/>
+  <text x="1043" y="403" font-size="14">2</text>
+
+  <text x="840" y="452" class="muted" font-size="13">● richtige Farbe und Position</text>
+  <circle cx="846" cy="474" r="6" fill="#fff" stroke="#212529" stroke-width="2"/>
+  <text x="860" y="479" class="muted" font-size="13">richtige Farbe, falsche Position</text>
+
+  <rect x="840" y="510" width="285" height="118" rx="6" fill="#fff3cd" stroke="#ffda6a"/>
+  <text x="860" y="540" fill="#664d03" font-size="14" font-weight="700">Bei Zeitablauf</text>
+  <text x="860" y="565" fill="#664d03" font-size="13">Der aktuelle vollständige Code wird</text>
+  <text x="860" y="586" fill="#664d03" font-size="13">automatisch übermittelt. Ein unvollständiger</text>
+  <text x="860" y="607" fill="#664d03" font-size="13">Code zählt nicht als gültiger Versuch.</text>
+</svg>

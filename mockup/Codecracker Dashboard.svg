@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <style>
+    text { font-family: Arial, sans-serif; fill: #212529; }
+    .card { fill: #fff; stroke: #dee2e6; stroke-width: 2; }
+    .heading { font-size: 22px; font-weight: 700; }
+    .small { font-size: 14px; }
+    .muted { fill: #6c757d; }
+    .button { fill: #0d6efd; }
+    .button-disabled { fill: #ced4da; stroke: #adb5bd; stroke-width: 1; }
+    .button-text { fill: #fff; font-weight: 700; text-anchor: middle; }
+    .button-text-disabled { fill: #6c757d; font-weight: 700; text-anchor: middle; }
+  </style>
+  <rect width="1200" height="760" fill="#f8f9fa"/>
+  <rect width="1200" height="76" fill="#212529"/>
+  <text x="42" y="48" fill="#fff" font-size="27" font-weight="700">Codecracker</text>
+  <text x="875" y="44" fill="#fff" font-size="16">A. Mustermann · User</text>
+  <text x="1090" y="44" fill="#fff" font-size="16">Abmelden</text>
+
+  <rect x="40" y="105" width="350" height="570" rx="10" class="card"/>
+  <text x="68" y="147" class="heading">Lobby</text>
+  <text x="68" y="177" class="muted small">Aktuell angemeldete Benutzer · Bereitschaft 24 s</text>
+
+  <rect x="68" y="205" width="294" height="48" rx="6" fill="#e7f1ff"/>
+  <text x="87" y="235" font-size="16">A. Mustermann</text>
+  <text x="340" y="235" class="small" fill="#997404" text-anchor="end">ausstehend</text>
+  <rect x="68" y="265" width="294" height="48" rx="6" fill="#f8f9fa" stroke="#dee2e6"/>
+  <text x="87" y="295" font-size="16">P. Musterfrau</text>
+  <text x="340" y="295" class="small" fill="#0f5132" text-anchor="end">bereit</text>
+  <rect x="68" y="325" width="294" height="48" rx="6" fill="#f8f9fa" stroke="#dee2e6"/>
+  <text x="87" y="355" font-size="16">K. Kleber</text>
+  <text x="340" y="355" class="small" fill="#842029" text-anchor="end">abgelehnt</text>
+
+  <text x="68" y="413" font-size="16" font-weight="700">P. Musterfrau startet ein Spiel.</text>
+  <text x="68" y="442" class="small">Möchtest du teilnehmen?</text>
+  <rect x="68" y="466" width="138" height="46" rx="6" fill="#198754"/>
+  <text x="137" y="495" class="button-text" font-size="15">Bereit</text>
+  <rect x="224" y="466" width="138" height="46" rx="6" fill="#6c757d"/>
+  <text x="293" y="495" class="button-text" font-size="15">Ablehnen</text>
+
+  <rect x="68" y="594" width="294" height="52" rx="6" class="button-disabled"/>
+  <text x="215" y="627" class="button-text-disabled" font-size="17">Spiel starten</text>
+
+  <rect x="420" y="105" width="740" height="570" rx="10" class="card"/>
+  <text x="450" y="147" class="heading">Highscore · letzte 10 Tage</text>
+  <text x="455" y="195" font-size="14" font-weight="700">Position</text>
+  <text x="570" y="195" font-size="14" font-weight="700">Name</text>
+  <text x="1020" y="195" font-size="14" font-weight="700">Punkte</text>
+  <line x1="450" y1="210" x2="1130" y2="210" stroke="#dee2e6"/>
+  <text x="478" y="244" font-size="16">1</text>
+  <text x="570" y="244" font-size="16">A. Mustermann</text>
+  <text x="1040" y="244" font-size="16">8</text>
+  <text x="478" y="286" font-size="16">2</text>
+  <text x="570" y="286" font-size="16">P. Musterfrau</text>
+  <text x="1040" y="286" font-size="16">5</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <style>
+    text { font-family: Arial, sans-serif; fill: #212529; }
+    .card { fill: #fff; stroke: #dee2e6; stroke-width: 2; }
+    .heading { font-size: 28px; font-weight: 700; }
+    .button-text { fill: #fff; font-size: 16px; font-weight: 700; text-anchor: middle; }
+    .muted { fill: #6c757d; }
+  </style>
+  <rect width="1200" height="760" fill="#f8f9fa"/>
+  <rect width="1200" height="76" fill="#212529"/>
+  <text x="42" y="48" fill="#fff" font-size="27" font-weight="700">Codecracker</text>
+  <text x="875" y="44" fill="#fff" font-size="16">A. Mustermann · User</text>
+  <text x="1090" y="44" fill="#fff" font-size="16">Abmelden</text>
+
+  <rect x="160" y="115" width="880" height="555" rx="12" class="card"/>
+  <circle cx="600" cy="190" r="45" fill="#198754"/>
+  <path d="M578 190 L594 206 L624 174" fill="none" stroke="#fff" stroke-width="8"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="600" y="270" class="heading" text-anchor="middle">Spiel beendet</text>
+  <text x="600" y="305" fill="#198754" font-size="21" font-weight="700" text-anchor="middle">A. Mustermann hat gewonnen</text>
+  <text x="600" y="335" class="muted" font-size="15" text-anchor="middle">Der Geheimcode wurde in Runde 6 erraten.</text>
+
+  <rect x="220" y="375" width="760" height="55" fill="#e9ecef"/>
+  <text x="250" y="409" font-size="14" font-weight="700">Spieler</text>
+  <text x="470" y="409" font-size="14" font-weight="700">Ergebnis</text>
+  <text x="650" y="409" font-size="14" font-weight="700">Punkte aus diesem Spiel</text>
+  <text x="875" y="409" font-size="14" font-weight="700">Gesamtpunkte</text>
+
+  <line x1="220" y1="486" x2="980" y2="486" stroke="#dee2e6"/>
+  <text x="250" y="468" font-size="16">A. Mustermann</text>
+  <text x="470" y="468" fill="#198754" font-size="16" font-weight="700">Gewonnen</text>
+  <text x="720" y="468" font-size="16">+3</text>
+  <text x="915" y="468" font-size="16">11</text>
+
+  <line x1="220" y1="542" x2="980" y2="542" stroke="#dee2e6"/>
+  <text x="250" y="524" font-size="16">P. Musterfrau</text>
+  <text x="470" y="524" fill="#dc3545" font-size="16" font-weight="700">Verloren</text>
+  <text x="720" y="524" font-size="16">−1</text>
+  <text x="915" y="524" font-size="16">4</text>
+
+  <rect x="445" y="580" width="310" height="55" rx="6" fill="#0d6efd"/>
+  <text x="600" y="614" class="button-text">Schließen</text>
+</svg>

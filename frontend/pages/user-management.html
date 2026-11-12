@@ -1,0 +1,71 @@
+{{> header title="Benutzerverwaltung"}}
+
+<main class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1 class="h2 mb-1">Benutzerverwaltung</h1>
+          <p class="text-body-secondary mb-0">
+            Benutzer verwalten (nur für Administratoren).
+          </p>
+        </div>
+        <span id="websocket-status" class="badge text-bg-secondary">
+          WebSocket getrennt
+        </span>
+      </div>
+
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-body py-3">
+          <h2 class="h5 mb-0">Neuen Benutzer anlegen</h2>
+        </div>
+        <div class="card-body p-4">
+          <form id="user-form" class="row g-2 align-items-end">
+            <div class="col-12 col-sm-4">
+              <label for="new-username" class="form-label fw-semibold">Benutzername</label>
+              <input id="new-username" class="form-control" type="text" required maxlength="16" />
+            </div>
+            <div class="col-12 col-sm-4">
+              <label for="new-password" class="form-label fw-semibold">Passwort</label>
+              <input id="new-password" class="form-control" type="password" required minlength="7" maxlength="26" />
+            </div>
+            <div class="col-12 col-sm-3">
+              <label for="new-role" class="form-label fw-semibold">Rolle</label>
+              <select id="new-role" class="form-select">
+                <option value="USER" selected>USER</option>
+                <option value="ADMIN">ADMIN</option>
+              </select>
+            </div>
+            <div class="col-12 col-sm-1">
+              <button class="btn btn-primary w-100" type="submit">+</button>
+            </div>
+          </form>
+
+          <div id="user-error" class="alert alert-danger mt-3 mb-0" role="alert" hidden></div>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-body py-3">
+          <h2 class="h5 mb-0">Benutzer</h2>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-hover mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Benutzername</th>
+                <th scope="col">Rolle</th>
+                <th scope="col" class="text-end">Aktionen</th>
+              </tr>
+            </thead>
+            <tbody id="user-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script type="module" src="/src/user-management.ts"></script>
+
+{{> footer}}

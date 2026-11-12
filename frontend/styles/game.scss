@@ -1,0 +1,121 @@
+
+@use "bootstrap/scss/bootstrap";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+  
+  .color-swatch {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .position-slot {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px dashed var(--bs-border-color);
+    background-color: transparent;
+  }
+
+  .position-slot.filled {
+    border-style: solid;
+    border-color: transparent;
+  }
+
+  .history-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .feedback-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid var(--bs-body-color);
+    background-color: transparent;
+  }
+
+  .feedback-dot--filled {
+    background-color: var(--bs-body-color);
+  }
+
+  #confirm-dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#confirm-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#confirm-dialog p {
+  margin-bottom: 20px;
+}
+
+#confirm-dialog .dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.history-color-dot {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.game-over-dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 480px;
+  width: 90vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.game-over-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.game-over-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.game-over-icon--win {
+  background-color: #1e7d43; // gleiches Grün wie eure Farbpalette
+}
+
+.game-over-icon--none {
+  background-color: #6c757d; // neutrales Grau, wenn niemand gewonnen hat
+}

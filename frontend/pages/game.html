@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.ico">
+  <title>Game</title>
+
+  <link rel="stylesheet" href="/styles/main.scss">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="/assets/logo.png" alt="Logo" width="40" height="40" class="me-2">
+      <span>Codecracker</span>
+    </a>
+  </div>
+</nav>
+
+
+
+<main class="container py-4">
+  <div class="row g-4">
+    <!-- Spielfeld -->
+    <div class="col-12 col-lg-7">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="h4 mb-0" id="round-label">Runde X von 10</h2>
+            <span class="text-body-secondary" id="time-remaining">Verbleibende Zeit: X s</span>
+          </div>
+
+          <h3 class="h6 mb-3">1. Farbe auswählen</h3>
+<div class="d-flex align-items-center gap-3 mb-4" id="color-picker">
+  <button type="button" class="color-swatch" data-color="RED" style="background-color:#c0392b;" aria-label="Rot"></button>
+  <button type="button" class="color-swatch" data-color="BLUE" style="background-color:#2f6fd1;" aria-label="Blau"></button>
+  <button type="button" class="color-swatch" data-color="GREEN" style="background-color:#1e7d43;" aria-label="Grün"></button>
+  <button type="button" class="color-swatch" data-color="YELLOW" style="background-color:#f0b400;" aria-label="Gelb"></button>
+  <span class="text-body-secondary small">Farben dürfen mehrfach verwendet werden.</span>
+</div>
+
+
+<h3 class="h6 mb-3">2. Codeposition auswählen</h3>
+<div class="d-flex gap-3 mb-4" id="position-picker">
+  <div class="text-center">
+    <div class="position-slot" data-position="1" id="pos1"></div>
+    <div class="text-body-secondary small mt-2">Position 1</div>
+  </div>
+  <div class="text-center">
+    <div class="position-slot" data-position="2" id="pos2"></div>
+    <div class="text-body-secondary small mt-2">Position 2</div>
+  </div>
+  <div class="text-center">
+    <div class="position-slot" data-position="3" id="pos3"></div>
+    <div class="text-body-secondary small mt-2">Position 3</div>
+  </div>
+  <div class="text-center">
+    <div class="position-slot" data-position="4" id="pos4"></div>
+    <div class="text-body-secondary small mt-2">Position 4</div>
+  </div>
+  <div class="ms-5" style="align-self: flex-start; margin-top: 13px;">
+    <button type="button" class="btn btn-secondary" id="reset-button">
+      Reset
+    </button>
+  </div>
+</div>
+
+
+
+
+        <dialog id="confirm-dialog" >
+            <p>Das Spiel wird als verloren gezählt, wenn Sie bestätigen.</p>
+             <div class="dialog-actions">
+                <button id="dialog-back-button" class="btn btn-outline-secondary">Abbrechen</button>
+                <button id="dialog-abort-button" class="btn btn-danger">Ich bestätige</button>
+            </div>
+        </dialog>
+
+          
+        <div class="d-flex align-items-center gap-3 mb-2">
+            <button type="button" class="btn btn-secondary" id="confirm-code-button" disabled>
+              Code bestätigen
+            </button>
+            <span class="text-body-secondary small">
+              Erst aktiv, wenn alle vier Positionen belegt sind.
+            </span>
+          </div>
+          <p class="text-body-secondary small mb-4">
+            Nach der Bestätigung ist der Code für diese Runde gesperrt.
+          </p>
+
+          <button type="button" class="btn btn-outline-danger" id="abort-game-button">
+            Spiel abbrechen
+          </button>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <!-- Codehistorie -->
+    <div class="col-12 col-lg-5">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h2 class="h4 mb-1">Codehistorie</h2>
+          <div class="small text-body-secondary mb-4">
+            <div class="mb-1"><span class="feedback-dot feedback-dot--filled"></span> richtige Farbe und Position</div>
+            <div><span class="feedback-dot"></span> richtige Farbe, falsche Position</div>
+          </div>
+ 
+          <ul id="code-history-list" class="list-group list-group-flush mb-4"></ul>
+ 
+          <div id="game-over-box" class="alert alert-success mb-4" hidden>
+            <p class="fw-semibold mb-1" id="game-over-message"></p>
+            <p class="small mb-2" id="game-over-code"></p>
+            <a href="/pages/dashboard.html" class="btn btn-sm btn-primary">Zurück zum Dashboard</a>
+          </div>
+
+          <div class="alert alert-warning mb-0">
+            <p class="fw-semibold mb-1">Bei Zeitablauf</p>
+            <p class="small mb-0">
+              Der aktuelle vollständige Code wird automatisch übermittelt. Ein unvollständiger
+              Code zählt nicht als gültiger Versuch.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<dialog id="game-over-dialog" class="game-over-dialog">
+  <div class="text-center mb-4">
+    <div id="game-over-icon" class="game-over-icon mb-3">
+      <svg id="game-over-icon-check" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 12 9 17 20 6"></polyline>
+      </svg>
+    </div>
+    <h2 class="h4 fw-bold mb-1">Spiel beendet</h2>
+    <p class="fw-semibold mb-1" id="game-over-subtitle"></p>
+    <p class="small text-body-secondary mb-0" id="game-over-detail"></p>
+  </div>
+
+  <table class="table mb-4">
+    <thead>
+      <tr>
+        <th scope="col">Spieler</th>
+        <th scope="col">Ergebnis</th>
+        <th scope="col" class="text-end">Punkte aus diesem Spiel</th>
+        <th scope="col" class="text-end">Gesamtpunkte</th>
+      </tr>
+    </thead>
+    <tbody id="game-over-table-body"></tbody>
+  </table>
+
+  <div class="d-grid">
+    <button type="button" class="btn btn-primary" id="game-over-close-button">Schließen</button>
+  </div>
+</dialog>
+
+
+
+
+<script type="module" src="/src/game.ts"></script>
+<link rel="stylesheet" href="/styles/game.scss">
+
+{{> footer}}

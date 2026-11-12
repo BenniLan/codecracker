@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Backend starten",
+      "mainClass": "de.thm.codecracker.Main",
+      "projectName": "codecracker-backend",
+      "cwd": "${workspaceFolder}/backend"
+    },
+    {
+      "type": "node-terminal",
+      "request": "launch",
+      "name": "Frontend starten",
+      "command": "npm run dev",
+      "cwd": "${workspaceFolder}/frontend"
+    }
+  ]
+}

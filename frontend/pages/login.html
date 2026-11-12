@@ -1,0 +1,44 @@
+{{> header title="Login"}}
+
+<main class="container py-4">
+  <h1 id="form-title">Einloggen</h1>
+  <div class="card p-4 shadow-sm" style="max-width: 400px;">
+    <form id="auth-form">
+      <div id="auth-error" class="alert alert-danger" role="alert" hidden></div>
+
+      <div class="mb-3">
+        <label for="username" class="form-label">Benutzername</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          required
+        >
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Passwort</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+        >
+      </div>
+
+      <button id="submit-button" type="submit" class="btn btn-primary w-100">
+        Einloggen
+      </button>
+    </form>
+
+    <a href="#" id="toggle-mode" class="d-block text-center mt-3">
+      Noch keinen Account? Registrieren
+    </a>
+  </div>
+</main>
+
+<script type="module" src="/src/login.ts"></script>
+
+{{> footer}}

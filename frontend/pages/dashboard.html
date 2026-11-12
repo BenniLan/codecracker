@@ -1,0 +1,125 @@
+{{> header title="Dashboard"}}
+
+<main class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      Angemeldet als <strong id="current-username"></strong>
+      (<span id="current-role"></span>)
+    </div>
+
+    <button id="admin-management-button" href="/pages/user-management.html" class="btn btn-outline-secondary btn-sm"> 
+      Benutzerverwaltung
+    </button>
+
+     <button id="reset-button" class="btn btn-outline-secondary btn-sm"> 
+      Reset
+    </button>
+
+    <button id="logout-button" class="btn btn-outline-secondary btn-sm">
+      Logout
+    </button>
+    
+
+  </div>
+
+
+  <div class="row g-4">
+    
+    <div class="col-12 col-lg-5">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h2 class="h4 mb-1">Lobby</h2>
+          <p class="text-body-secondary small mb-3" id="lobby-subtitle">
+            Aktuell angemeldete Benutzer
+          </p>
+
+          <ul id="lobby-list" class="list-group mb-3">
+          
+          </ul>
+
+          <div id="game-invite" class="mb-3" hidden>
+            <p class="mb-1 fw-semibold" id="invite-message">
+             
+            </p>
+            <p class="text-body-secondary small mb-2">
+              Möchtest du teilnehmen?
+            </p>
+            <div class="d-flex gap-2">
+              <button id="ready-button" class="btn btn-success">
+                Bereit
+              </button>
+              <button id="decline-button" class="btn btn-outline-secondary">
+                Ablehnen
+              </button>
+            </div>
+          </div>
+
+          <div id="game-status" class="alert alert-warning mb-3" hidden>
+            <p class="fw-semibold mb-1">Aktuell läuft ein Spiel.</p>
+            <p class="small mb-0" id="game-status-detail"></p>
+          </div>
+
+          <button id="start-game-button" class="btn btn-secondary w-100" enabled>
+            Spiel starten
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highscore -->
+    <div class="col-12 col-lg-7">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h2 class="h4 mb-3">Highscore · letzte 10 Tage</h2>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Position</th>
+                <th scope="col">Name</th>
+                <th scope="col">Punkte</th>
+              </tr>
+            </thead>
+            <tbody id="highscore-body">
+      
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<dialog id="game-over-dialog" class="game-over-dialog">
+  <div class="text-center mb-4">
+    <div id="game-over-icon" class="game-over-icon mb-3">
+      <svg id="game-over-icon-check" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 12 9 17 20 6"></polyline>
+      </svg>
+    </div>
+    <h2 class="h4 fw-bold mb-1">Spiel beendet</h2>
+    <p class="fw-semibold mb-1" id="game-over-subtitle"></p>
+    <p class="small text-body-secondary mb-0" id="game-over-detail"></p>
+  </div>
+
+  <table class="table mb-4">
+    <thead>
+      <tr>
+        <th scope="col">Spieler</th>
+        <th scope="col">Ergebnis</th>
+        <th scope="col" class="text-end">Punkte aus diesem Spiel</th>
+        <th scope="col" class="text-end">Gesamtpunkte</th>
+      </tr>
+    </thead>
+    <tbody id="game-over-table-body"></tbody>
+  </table>
+
+  <div class="d-grid">
+    <button type="button" class="btn btn-primary" id="game-over-close-button">Schließen</button>
+  </div>
+</dialog>
+
+<script type="module" src="/src/dashboard.ts"></script>
+<link rel="stylesheet" href="/styles/game.scss">
+
+{{> footer}}

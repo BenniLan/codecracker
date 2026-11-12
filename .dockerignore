@@ -1,0 +1,19 @@
+# Git
+.git
+.gitignore
+
+# IDEs
+.idea
+.vscode
+
+# Frontend
+frontend/node_modules
+frontend/dist
+frontend/.vite
+
+# Backend
+backend/target
+
+# OS
+.DS_Store
+Thumbs.db

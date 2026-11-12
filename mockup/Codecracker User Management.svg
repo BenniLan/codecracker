@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <style>
+    text { font-family: Arial, sans-serif; fill: #212529; }
+    .card { fill: #fff; stroke: #dee2e6; stroke-width: 2; }
+    .heading { font-size: 24px; font-weight: 700; }
+    .muted { fill: #6c757d; }
+    .button-text { fill: #fff; font-size: 15px; font-weight: 700; text-anchor: middle; }
+  </style>
+  <rect width="1200" height="760" fill="#f8f9fa"/>
+  <rect width="1200" height="76" fill="#212529"/>
+  <text x="42" y="48" fill="#fff" font-size="27" font-weight="700">Codecracker</text>
+  <text x="560" y="44" fill="#fff" font-size="16">Dashboard</text>
+  <text x="675" y="44" fill="#fff" font-size="16" font-weight="700">Benutzerverwaltung</text>
+  <text x="915" y="44" fill="#fff" font-size="16">Admin · Admin</text>
+  <text x="1090" y="44" fill="#fff" font-size="16">Abmelden</text>
+
+  <rect x="40" y="105" width="1120" height="570" rx="10" class="card"/>
+  <text x="70" y="153" class="heading">Benutzerverwaltung</text>
+  <text x="70" y="183" class="muted" font-size="15">Diese Ansicht und die zugehörigen Endpunkte sind ausschließlich für Administratoren verfügbar.</text>
+
+  <rect x="70" y="220" width="620" height="48" rx="6" fill="#fff" stroke="#adb5bd" stroke-width="2"/>
+  <text x="90" y="251" class="muted" font-size="15">Nach Benutzername suchen</text>
+  <rect x="710" y="220" width="130" height="48" rx="6" fill="#6c757d"/>
+  <text x="775" y="251" class="button-text">Suchen</text>
+  <rect x="915" y="220" width="205" height="48" rx="6" fill="#0d6efd"/>
+  <text x="1017" y="251" class="button-text">Benutzer hinzufügen</text>
+
+  <rect x="70" y="305" width="1050" height="55" fill="#e9ecef"/>
+  <text x="90" y="339" font-size="14" font-weight="700">Benutzername</text>
+  <text x="520" y="339" font-size="14" font-weight="700">Rolle</text>
+  <text x="900" y="339" font-size="14" font-weight="700">Aktionen</text>
+
+  <line x1="70" y1="415" x2="1120" y2="415" stroke="#dee2e6"/>
+  <text x="90" y="397" font-size="16">admin</text>
+  <text x="520" y="397" font-size="16">Admin</text>
+  <rect x="855" y="374" width="110" height="36" rx="5" fill="#6c757d"/>
+  <text x="910" y="398" class="button-text">Bearbeiten</text>
+  <rect x="980" y="374" width="110" height="36" rx="5" fill="#dc3545"/>
+  <text x="1035" y="398" class="button-text">Löschen</text>
+
+  <line x1="70" y1="480" x2="1120" y2="480" stroke="#dee2e6"/>
+  <text x="90" y="462" font-size="16">a.mustermann</text>
+  <text x="520" y="462" font-size="16">User</text>
+  <rect x="855" y="439" width="110" height="36" rx="5" fill="#6c757d"/>
+  <text x="910" y="463" class="button-text">Bearbeiten</text>
+  <rect x="980" y="439" width="110" height="36" rx="5" fill="#dc3545"/>
+  <text x="1035" y="463" class="button-text">Löschen</text>
+
+  <line x1="70" y1="545" x2="1120" y2="545" stroke="#dee2e6"/>
+  <text x="90" y="527" font-size="16">p.musterfrau</text>
+  <text x="520" y="527" font-size="16">User</text>
+  <rect x="855" y="504" width="110" height="36" rx="5" fill="#6c757d"/>
+  <text x="910" y="528" class="button-text">Bearbeiten</text>
+  <rect x="980" y="504" width="110" height="36" rx="5" fill="#dc3545"/>
+  <text x="1035" y="528" class="button-text">Löschen</text>
+
+  <rect width="1200" height="760" fill="#212529" opacity="0.45"/>
+
+  <rect x="325" y="112" width="550" height="555" rx="12" fill="#fff" stroke="#adb5bd" stroke-width="2"/>
+  <text x="365" y="162" font-size="24" font-weight="700">Benutzer bearbeiten</text>
+  <text x="835" y="162" class="muted" font-size="26" text-anchor="end">×</text>
+  <line x1="325" y1="185" x2="875" y2="185" stroke="#dee2e6"/>
+
+  <text x="365" y="230" font-size="15" font-weight="700">Benutzername</text>
+  <rect x="365" y="247" width="470" height="48" rx="6" fill="#fff" stroke="#adb5bd" stroke-width="2"/>
+  <text x="383" y="278" font-size="15">a.mustermann</text>
+
+  <text x="365" y="335" font-size="15" font-weight="700">Neues Passwort</text>
+  <rect x="365" y="352" width="470" height="48" rx="6" fill="#fff" stroke="#adb5bd" stroke-width="2"/>
+  <text x="383" y="383" class="muted" font-size="15">Leer lassen, um das Passwort nicht zu ändern</text>
+  <text x="365" y="423" class="muted" font-size="13">Das bestehende Passwort und der gespeicherte Hashwert werden nicht angezeigt.</text>
+
+  <text x="365" y="468" font-size="15" font-weight="700">Rolle</text>
+  <rect x="365" y="485" width="470" height="48" rx="6" fill="#fff" stroke="#adb5bd" stroke-width="2"/>
+  <text x="383" y="516" font-size="15">User</text>
+  <path d="M805 504 L815 514 L825 504" fill="none" stroke="#6c757d" stroke-width="2"/>
+
+  <line x1="325" y1="562" x2="875" y2="562" stroke="#dee2e6"/>
+  <rect x="565" y="590" width="125" height="48" rx="6" fill="#6c757d"/>
+  <text x="627" y="620" class="button-text">Abbrechen</text>
+  <rect x="710" y="590" width="125" height="48" rx="6" fill="#0d6efd"/>
+  <text x="772" y="620" class="button-text">Speichern</text>
+</svg>
