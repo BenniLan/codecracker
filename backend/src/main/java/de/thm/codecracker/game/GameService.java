@@ -85,7 +85,7 @@ public class GameService {
    * Bricht ein laufendes Spiel zwangsweise ab und setzt den kompletten
    * Zustand zurück, unabhängig vom Rundenstatus.
    *
-   * <p>Wird über das Debug-Kommando {@code reset-game} der Lobby ausgelöst
+   
    * (siehe README: "muss vor der Abgabe entfernt werden"). Informiert alle
    * verbundenen Spieler per {@code game-aborted}-Nachricht und ruft
    * anschließend {@link #onGameEnded} auf. Es wird bewusst keine

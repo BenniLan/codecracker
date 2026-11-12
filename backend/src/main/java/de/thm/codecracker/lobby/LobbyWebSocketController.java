@@ -83,7 +83,7 @@ public class LobbyWebSocketController {
       switch (type){
         case "start-game" -> startGame(socket);
         case "respond" -> respond(socket, command.getJsonObject("payload", new JsonObject()));
-        case "reset-game" -> resetGame(socket);
+      
         default -> LOGGER.warn("Unknown lobby command", type);
       }
     }catch (Exception exception){
@@ -129,14 +129,7 @@ public class LobbyWebSocketController {
     }
   }
 
-  private synchronized void resetGame(ServerWebSocket socket){
-    gameInProgress = false;
-    playingUsernames = Set.of();
-    gameService.forceEnd();
-    LOGGER.info("Game manually ended via debug command");
-    broadcastLobbyState();
-  }
-
+ 
   private synchronized void respond(ServerWebSocket socket, JsonObject payload){
     if(activeInvite == null || !activeInvite.invited().contains(socket)) return;
 

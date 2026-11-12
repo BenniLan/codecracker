@@ -36,12 +36,7 @@ function decodeJwtPayload(jwt: string): JwtPayload | null {
 const usernameLabel = document.querySelector<HTMLElement>("#current-username");
 const roleLabel = document.querySelector<HTMLElement>("#current-role");
 const managementButton = document.querySelector<HTMLButtonElement>("#admin-management-button");
-const resetButton = document.querySelector<HTMLButtonElement>("#reset-button");
 
-// Admin-Aktion: Spiel/Lobby zurücksetzen.
-resetButton?.addEventListener("click", () => {
-  lobbySocket?.send(JSON.stringify({type: "reset-game"}))
-})
 
 // Token auslesen und Benutzername/Rolle anzeigen.
 // Admin-spezifische Buttons (Verwaltung, Reset) werden nur für Admins eingeblendet.
@@ -53,9 +48,7 @@ if (token) {
   if(managementButton){
     managementButton.hidden = payload?.role !== "ADMIN";
   }
-  if(resetButton){
-    resetButton.hidden = payload?.role !== "ADMIN";
-  }
+  
 }
 
 // ============================================================
